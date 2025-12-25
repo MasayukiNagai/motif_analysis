@@ -1,0 +1,22 @@
+[project]
+name = "motif-analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "logomaker-batch",
+    "memelite>=0.2.0",
+    "modisco-lite>=2.4.0",
+    "scikit-learn>=1.7.2",
+    "tangermeme>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "h5py>=3.15.1",
+    "notebook>=7.5.1",
+]
+
+[tool.uv.sources]
+logomaker-batch = { git = "https://github.com/MasayukiNagai/logomaker_batch.git" }
