@@ -13,6 +13,7 @@ def run_tfmodisco(
     output_dir="tfmodisco_report",
     n_seqlets=2000,
     window_size=1000,
+    meme_db=None,
 ):
     """Run tfmodisco-lite for motif discovery"""
 
@@ -36,6 +37,8 @@ def run_tfmodisco(
 
     # Generate report
     cmd_report = ["modisco", "report", "-i", str(output_h5), "-o", str(output_dir)]
+    if meme_db is not None:
+        cmd_report += ["-m", str(meme_db)]
     print("CMD:", " ".join(cmd_report))
     subprocess.run(cmd_report, check=True)
 
